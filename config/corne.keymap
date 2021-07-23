@@ -11,7 +11,7 @@
 #define DEFAULT 0
 #define NUM     1
 #define SYM     2
-#define FN      3
+#define FUNC    3
 
 / {
         keymap {
@@ -28,10 +28,10 @@
 
                 num_layer {
                         bindings = <
-    &kp GRAVE   &none          &kp LC(LEFT) &kp UP   &kp LCTL(RIGHT) &kp PGUP &none    &kp N7 &kp N8 &kp N9 &kp PLUS  &kp AMPS
-    &trans      &kp LC(LA(LGUI)) &kp LEFT     &kp DOWN &kp RIGHT       &kp PGDN &none    &kp N4 &kp N5 &kp N6 &kp MINUS &kp SLASH
-    &trans      &none          &none        &none    &kp HOME        &kp END  &kp N0   &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
-                &trans  &trans  &trans  &trans  &mo FN  &trans
+    &kp GRAVE   &none            &kp LC(LEFT) &kp UP   &kp LCTL(RIGHT) &kp PGUP &none    &kp N7 &kp N8 &kp N9 &kp PLUS  &kp AMPS
+    &trans      &kp LC(LG(LALT)) &kp LEFT     &kp DOWN &kp RIGHT       &kp PGDN &none    &kp N4 &kp N5 &kp N6 &kp MINUS &kp SLASH
+    &trans      &none            &none        &none    &kp HOME        &kp END  &kp N0   &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
+                &trans  &trans  &trans  &trans  &mo FUNC  &trans
                         >;
                 };
 
@@ -40,11 +40,11 @@
     // &kp GRAVE   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
     // &trans      &none     &none   &none     &none     &none       &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
     // &trans      &none     &none   &none     &none     &none       &kp UNDER &kp PLUS  &kp LBRC          &kp RBRC   &kp PIPE &kp TILDE
-    //             &trans &mo FN &trans &trans &trans &trans
+    //             &trans &mo FUNC &trans &trans &trans &trans
     //                     >;
     //             };
 
-    //             fn_layer {
+    //             func_layer {
     //                     bindings = <
     // &kp F1 &kp F2       &kp F3      &kp F4          &kp F5     &kp F6           &kp F7     &kp F8       &kp F9       &kp F10  &kp F11  &kp F12
     // &none  &none        &none       &kp C_PREV      &kp C_NEXT &kp C_PLAY_PAUSE &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none    &none    &none
