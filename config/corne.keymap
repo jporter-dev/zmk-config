@@ -26,14 +26,14 @@
                         >;
                 };
 
-    //             num_layer {
-    //                     bindings = <
-    // &kp GRAVE   &none          &kp LC(LEFT) &kp UP   &kp LCTL(RIGHT) &kp PGUP &none    &kp N7 &kp N8 &kp N9 &kp PLUS  &kp AMPS
-    // &trans      &kp LC(LA(LG)) &kp LEFT     &kp DOWN &kp RIGHT       &kp PGDN &none    &kp N4 &kp N5 &kp N6 &kp MINUS &kp SLASH
-    // &trans      &none          &none        &none    &kp HOME        &kp END  &kp N0   &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
-    //             &trans  &trans  &trans  &trans  &mo FN  &trans
-    //                     >;
-    //             };
+                num_layer {
+                        bindings = <
+    &kp GRAVE   &none          &kp LC(LEFT) &kp UP   &kp LCTL(RIGHT) &kp PGUP &none    &kp N7 &kp N8 &kp N9 &kp PLUS  &kp AMPS
+    &trans      &kp LC(LA(LG)) &kp LEFT     &kp DOWN &kp RIGHT       &kp PGDN &none    &kp N4 &kp N5 &kp N6 &kp MINUS &kp SLASH
+    &trans      &none          &none        &none    &kp HOME        &kp END  &kp N0   &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
+                &trans  &trans  &trans  &trans  &mo FN  &trans
+                        >;
+                };
 
     //             sym_layer {
     //                     bindings = <
