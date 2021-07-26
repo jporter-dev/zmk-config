@@ -13,6 +13,10 @@
 #define SYM     2
 #define FUNC    3
 
+&mt {
+    tapping-term-ms = <250>;
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
