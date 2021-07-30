@@ -1,5 +1,7 @@
 {
   "files.associations": {
     "*.yaml": "home-assistant"
-  }
+  },
+  "editor.detectIndentation": false,
+  "editor.tabSize": 4
 }
