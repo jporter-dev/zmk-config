@@ -3,5 +3,8 @@
     "*.yaml": "home-assistant"
   },
   "editor.detectIndentation": false,
-  "editor.tabSize": 4
+"editor.tabSize": 4,
+"yaml.schemas": {
+    "https://json.schemastore.org/github-action.json": "file:///Users/jporter/code/personal/zmk-config/.github/workflows/build.yml"
+}
 }
