@@ -96,7 +96,7 @@
 &none   /**/  &kp Q           &kp W       &kp E       &kp R           &kp T   /**/  &kp Y    &kp U           &kp I       &kp O       &kp P          /**/  &none
 &none   /**/  &hm LGUI A      &hm LALT S  &hm LCTRL D &hm LSHIFT F    &kp G   /**/  &kp H    &hm RSHIFT J    &hm RCTRL K &hm RALT L  &hm RGUI SEMI  /**/  &none
 &none   /**/  &kp Z           &kp X       &kp C       &kp V           &kp B   /**/  &kp N    &kp M           &kp COMMA   &kp DOT     &kp FSLH       /**/  &none
-              &mt LCTRL ESC &mt NUM2 BSPC &mt LGUI SPACE  /**/  &mt RGUI RET &mt SYM2 TAB &none
+              &mt LCTRL ESC &lt NUM2 BSPC &mt LGUI SPACE  /**/  &mt RGUI RET &lt SYM2 TAB &none
 
       >;
     };
