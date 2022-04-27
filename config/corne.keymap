@@ -14,10 +14,6 @@
 #define NUM     1
 #define SYM     2
 #define FUNC    3
-#define DEFAULT2 4
-#define NUM2     5
-#define SYM2     6
-#define FUNC2    7
 
 // MACROS
 #define SUPERKEY LC(LG(LALT))
@@ -55,6 +51,14 @@
       tapping-term-ms = <200>;
       bindings = <&mt LCTRL TAB>, <&kp ESC>;
     };
+
+    td2: tap_dance_2 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_2";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&lt NUM BSPC>, <&kp DEL>;
+    };
   };
 
   keymap {
@@ -63,10 +67,10 @@
     default_layer {
       bindings = <
 
-&kp TAB         &kp Q &kp W &kp E &kp R &kp T  /**/  &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&mt LCTRL BSPC  &kp A &kp S &kp D &kp F &kp G  /**/  &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT       &kp Z &kp X &kp C &kp V &kp B  /**/  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-&mt LCTRL ESC &mo NUM &mt LGUI SPACE  /**/  &mt RGUI RET &mo SYM &mt RALT DEL
+&none   /**/  &kp Q           &kp W       &kp E       &kp R           &kp T   /**/  &kp Y    &kp U           &kp I       &kp O       &kp P          /**/  &none
+&none   /**/  &hm LGUI A      &hm LALT S  &hm LCTRL D &hm LSHIFT F    &kp G   /**/  &kp H    &hm RSHIFT J    &hm RCTRL K &hm RALT L  &td0           /**/  &none
+&none   /**/  &kp Z           &kp X       &kp C       &kp V           &kp B   /**/  &kp N    &kp M           &kp COMMA   &kp DOT     &kp FSLH       /**/  &none
+              &td1  &td2  &mt LGUI SPACE  /**/  &mt RGUI RET &lt SYM GRAVE &mt RALT SQT
 
       >;
     };
@@ -74,77 +78,31 @@
     num_layer {
       bindings = <
 
-&kp GRAVE &none         &kp LC(LEFT) &kp UP   &kp LC(RIGHT)   &kp PG_UP  /**/  &none     &kp N7 &kp N8 &kp N9 &kp PLUS  &kp KP_MULTIPLY
-&trans    &kp SUPERKEY  &kp LEFT     &kp DOWN &kp RIGHT       &kp PG_DN  /**/  &kp MINUS &kp N4 &kp N5 &kp N6 &kp MINUS &kp SLASH
-&trans    &none         &none        &none    &kp HOME        &kp END    /**/  &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
-&trans  &trans  &trans  /**/  &trans  &mo FUNC  &trans
+&none   /**/  &kp GRAVE     &kp LC(LEFT)  &kp UP    &kp LC(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  /**/  &none
+&none   /**/  &kp SUPERKEY  &kp LEFT      &kp DOWN  &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
+&none   /**/  &none         &none         &none     &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
+              &trans  &trans  &trans  /**/  &trans  &mo FUNC  &trans
 
       >;
     };
 
     sym_layer {
       bindings = <
-&kp GRAVE   &kp EXCL        &kp AT         &kp HASH        &kp DLLR         &kp PRCNT  /**/  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-&trans      &kp C_AC_REDO   &none          &none           &none            &none      /**/  &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-&trans      &kp C_AC_UNDO   &kp C_AC_CUT   &kp C_AC_COPY   &kp C_AC_PASTE   &none      /**/  &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-&trans &mo FUNC &trans  /**/  &trans &trans &trans
+
+&none   /**/  &kp EXCL    &kp AT         &kp HASH     &kp DLLR    &kp PRCNT   /**/  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR  /**/  &none
+&none   /**/  &kp GRAVE   &kp TILDE      &none        &none       &caps_word  /**/  &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH  /**/  &none
+&none   /**/  &kp TILDE   &none          &none        &none       &none       /**/  &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE  /**/  &none
+              &trans &mo FUNC &trans  /**/  &trans &trans &trans
+
       >;
     };
 
     func_layer {
       bindings = <
 
-&kp F1        &kp F2        &kp F3        &kp F4      &kp F5     &kp F6            /**/  &kp F7         &kp F8       &kp F9       &kp F10  &kp F11  &kp F12
-&none         &none         &none         &kp C_PREV  &kp C_NEXT &kp C_PLAY_PAUSE  /**/  &kp C_MUTE     &kp C_VOL_DN &kp C_VOL_UP &none    &none    &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR        /**/  &to DEFAULT2   &none        &none        &none    &none    &none
-&reset &trans &bootloader  /**/  &bootloader &trans &reset
-
-      >;
-    };
-
-
-// TEMPORARY 3x5 LAYOUTS
-
-
-    default2_layer {
-      bindings = <
-
-&none   /**/  &kp Q           &kp W       &kp E       &kp R           &kp T   /**/  &kp Y    &kp U           &kp I       &kp O       &kp P          /**/  &none
-&none   /**/  &hm LGUI A      &hm LALT S  &hm LCTRL D &hm LSHIFT F    &kp G   /**/  &kp H    &hm RSHIFT J    &hm RCTRL K &hm RALT L  &td0           /**/  &none
-&none   /**/  &kp Z           &kp X       &kp C       &kp V           &kp B   /**/  &kp N    &kp M           &kp COMMA   &kp DOT     &kp FSLH       /**/  &none
-              &td1  &lt NUM2 BSPC &mt LGUI SPACE  /**/  &mt RGUI RET &lt SYM2 GRAVE &mt RALT SQT
-
-      >;
-    };
-
-    num2_layer {
-      bindings = <
-
-&none   /**/  &kp GRAVE     &kp LC(LEFT)  &kp UP    &kp LC(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  /**/  &none
-&none   /**/  &kp SUPERKEY  &kp LEFT      &kp DOWN  &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
-&none   /**/  &none         &none         &none     &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
-              &trans  &trans  &trans  /**/  &trans  &mo FUNC2  &trans
-
-      >;
-    };
-
-    sym2_layer {
-      bindings = <
-
-&none   /**/  &kp EXCL    &kp AT         &kp HASH     &kp DLLR    &kp PRCNT   /**/  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR  /**/  &none
-&none   /**/  &kp GRAVE   &kp TILDE      &none        &none       &caps_word  /**/  &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH  /**/  &none
-&none   /**/  &kp TILDE   &none          &none        &none       &none       /**/  &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE  /**/  &none
-              &trans &mo FUNC2 &trans  /**/  &trans &trans &trans
-
-      >;
-    };
-
-    func2_layer {
-      bindings = <
-
 &none   /**/  &kp F1          &kp F2          &kp F3          &kp F4     &kp F5            /**/  &kp F6          &kp F7       &kp F8       &kp F9   &kp F10  /**/  &none
 &none   /**/  &none           &none           &kp C_PREV      &kp C_NEXT &kp C_PLAY_PAUSE  /**/  &kp C_MUTE      &kp C_VOL_DN &kp C_VOL_UP &none    &kp F11  /**/  &none
-&none   /**/  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_NXT &bt BT_CLR        /**/  &to DEFAULT     &none        &none        &none    &kp F12  /**/  &none
+&none   /**/  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_NXT &bt BT_CLR        /**/  &none           &none        &none        &none    &kp F12  /**/  &none
               &reset &trans &bootloader  /**/  &bootloader &trans &reset
 
       >;
