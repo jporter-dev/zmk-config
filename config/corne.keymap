@@ -60,7 +60,13 @@
       key-positions = <16 19>;
       bindings = <&caps_word>;
     };
+
+    combo_vimwq {
+      timeout-ms = <50>;
+      key-positions = <1 2>;
+      bindings = <&kp ESC>, <&kp COLON>, <&kp Q>, <&kp W>;
     };
+  };
 
   keymap {
     compatible = "zmk,keymap";
