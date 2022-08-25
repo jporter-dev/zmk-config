@@ -95,9 +95,9 @@
     num_layer {
       bindings = <
 
-&none   /**/  &kp GRAVE     &kp LC(LEFT)  &kp UP    &kp LC(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  /**/  &none
-&none   /**/  &kp SUPER     &kp LEFT      &kp DOWN  &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
-&none   /**/  &kp SUPER2    &none         &none     &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
+&none   /**/  &kp GRAVE     &kp LG(LEFT)  &kp UP        &kp LG(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  /**/  &none
+&none   /**/  &kp SUPER     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
+&none   /**/  &kp SUPER2    &none         &kp LG(DOWN)  &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
               &trans  &trans  &trans  /**/  &trans  &mo FUNC  &trans
 
       >;
@@ -107,7 +107,7 @@
       bindings = <
 
 &none   /**/  &kp EXCL    &kp AT         &kp HASH     &kp DLLR    &kp PRCNT   /**/  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR  /**/  &none
-&none   /**/  &kp GRAVE   &kp TILDE      &none        &caps_word  &none  /**/  &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH  /**/  &none
+&none   /**/  &kp GRAVE   &kp TILDE      &none        &none       &none  /**/  &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH  /**/  &none
 &none   /**/  &kp TILDE   &none          &none        &none       &none       /**/  &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE  /**/  &none
               &trans &mo FUNC &trans  /**/  &trans &trans &trans
 
