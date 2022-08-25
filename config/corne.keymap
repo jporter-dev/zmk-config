@@ -16,8 +16,8 @@
 #define FUNC    3
 
 // MACROS
-#define SUPERKEY LC(LG(LALT))
-#define SUPERKEY2 LC(TILDE)
+#define SUPERKEY LA(LSHIFT)
+#define SUPERKEY2 LA(LC(LSHIFT))
 
 &mt {
   tapping-term-ms = <200>;
