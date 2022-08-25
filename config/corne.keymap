@@ -16,8 +16,8 @@
 #define FUNC    3
 
 // MACROS
-#define SUPERKEY LC(LSHIFT)
-#define SUPERKEY2 LA(LC(LSHIFT))
+#define SUPER LC(LSHIFT)
+#define SUPER2 LA(LC(LSHIFT))
 
 &mt {
   tapping-term-ms = <200>;
@@ -96,8 +96,8 @@
       bindings = <
 
 &none   /**/  &kp GRAVE     &kp LC(LEFT)  &kp UP    &kp LC(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  /**/  &none
-&none   /**/  &kp SUPERKEY  &kp LEFT      &kp DOWN  &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
-&none   /**/  &kp SUPERKEY2 &none         &none     &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
+&none   /**/  &kp SUPER     &kp LEFT      &kp DOWN  &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
+&none   /**/  &kp SUPER2    &none         &none     &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
               &trans  &trans  &trans  /**/  &trans  &mo FUNC  &trans
 
       >;
