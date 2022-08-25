@@ -16,7 +16,7 @@
 #define FUNC    3
 
 // MACROS
-#define SUPERKEY LA(LSHIFT)
+#define SUPERKEY LC(LSHIFT)
 #define SUPERKEY2 LA(LC(LSHIFT))
 
 &mt {
