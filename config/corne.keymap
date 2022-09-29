@@ -129,18 +129,18 @@
 
     game1 {
       bindings = <
-&kp 3  &kp 4         &kp Q &kp W &kp E &kp R             /**/  &none &none &none &none &none  /**/  &none
-&kp M  &kp LSHIFT    &kp A &kp S &kp D &kp F             /**/  &none &none &none &none &none  /**/  &none
-&kp G  &kp TAB       &kp Z &kp X &kp C &kp V             /**/  &none &none &none &none &none  /**/  &to DEFAULT
-              &kp 1 &lt GAME2 2 &mt LCTRL SPACE          /**/  &trans &trans &trans
+&kp N1  &kp N2      &kp Q &kp W &kp E &kp R             /**/  &none &none &none &none &none  /**/  &none
+&kp TAB &kp LSHIFT  &kp A &kp S &kp D &kp G             /**/  &none &none &none &none &none  /**/  &none
+&kp N3  &kp Z       &kp X &kp C &kp V &kp M             /**/  &none &none &none &none &none  /**/  &to DEFAULT
+              &kp N4 &lt GAME2 2 &kp SPACE          /**/  &trans &trans &trans
       >;
     };
 
     game2 {
       bindings = <
-&kp ESC  &trans &trans &trans &trans &trans             /**/  &none &none &none &none &none  /**/  &none
-&kp T    &trans &trans &trans &trans &trans             /**/  &none &none &none &none &none  /**/  &none
-&kp G    &trans &trans &trans &kp N  &kp M              /**/  &none &none &none &none &none  /**/  &to DEFAULT
+&kp ESC  &kp N5 &trans &trans &trans &trans             /**/  &none &none &none &none &none  /**/  &none
+&kp T    &kp N6 &trans &trans &trans &trans             /**/  &none &none &none &none &none  /**/  &none
+&kp G    &kp N7 &trans &trans &kp N  &kp M              /**/  &none &none &none &none &none  /**/  &to DEFAULT
                       &trans &trans &trans                      /**/  &trans &trans &trans
       >;
     };
