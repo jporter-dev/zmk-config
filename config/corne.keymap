@@ -38,6 +38,12 @@
 	};
 };
 
+/ {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+};
+
 // LAYERS
 #define DEFAULT 0
 #define NUM     1
