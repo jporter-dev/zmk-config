@@ -2,6 +2,6 @@
 "editor.detectIndentation": false,
 "editor.tabSize": 2,
 "yaml.schemas": {
-    "https://json.schemastore.org/github-action.json": "file:///Users/jporter/code/personal/zmk-config/.github/workflows/build.yml"
+    "https://json.schemastore.org/github-action.json": "file:///Users/jporter/Code/zmk-config/.github/workflows/build.yml"
 }
 }
