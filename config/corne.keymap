@@ -19,6 +19,11 @@
 #define SUPER LC(LSHIFT)
 #define SUPER2 LA(LC(LSHIFT))
 
+// Opposite-hand key positions, used to restrict homerow mod holds to
+// cross-hand chords so same-hand rolls resolve as taps.
+#define LEFT_HAND_KEYS 1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 36 37 38
+#define RIGHT_HAND_KEYS 6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 39 40 41
+
 &mt {
   tapping-term-ms = <200>;
   flavor = "tap-preferred";
@@ -26,14 +31,28 @@
 
 / {
   behaviors {
-    hm: homerow_mods {
+    hml: homerow_mods_left {
       compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
+      label = "HOMEROW_MODS_LEFT";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
       quick-tap-ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <RIGHT_HAND_KEYS>;
+      hold-trigger-on-release;
+    };
+
+    hmr: homerow_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_RIGHT";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <LEFT_HAND_KEYS>;
+      hold-trigger-on-release;
     };
 
     td0: tap_dance_0 {
@@ -41,7 +60,7 @@
       label = "TAP_DANCE_0";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&hm RGUI SEMI>, <&kp SQT>;
+      bindings = <&hmr RGUI SEMI>, <&kp SQT>;
     };
 
     td1: tap_dance_1 {
@@ -85,7 +104,7 @@
       bindings = <
 
 &none   /**/  &kp Q           &kp W       &kp E       &kp R           &kp T   /**/  &kp Y    &kp U           &kp I       &kp O       &kp P          /**/  &none
-&none   /**/  &hm LGUI A      &hm LALT S  &hm LCTRL D &hm LSHIFT F    &kp G   /**/  &kp H    &hm RSHIFT J    &hm RCTRL K &hm RALT L  &td0           /**/  &none
+&none   /**/  &hml LGUI A     &hml LALT S &hml LCTRL D &hml LSHIFT F  &kp G   /**/  &kp H    &hmr RSHIFT J   &hmr RCTRL K &hmr RALT L &td0           /**/  &none
 &none   /**/  &kp Z           &kp X       &kp C       &kp V           &kp B   /**/  &kp N    &kp M           &kp COMMA   &kp DOT     &kp FSLH       /**/  &none
               &td1  &lt NUM BSPC &mt LGUI SPACE  /**/  &mt RGUI RET &lt SYM DEL &mt RALT GRAVE
 
